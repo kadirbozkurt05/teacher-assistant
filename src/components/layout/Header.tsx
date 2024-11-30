@@ -1,6 +1,6 @@
 import { GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from '@/components/ui/navigation-menu';
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from '@/components/ui/navigation-menu';
 import { Button } from '@/components/ui/button';
 
 export function Header() {
