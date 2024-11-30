@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { BookOpen, Layout, PenTool, GraduationCap, Sparkles, Users, BookCheck } from 'lucide-react';
+import { BookOpen, GraduationCap, Sparkles, Users, BookCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function HomePage() {
