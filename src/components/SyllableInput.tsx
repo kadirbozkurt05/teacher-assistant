@@ -22,17 +22,11 @@ export function SyllableInput({ onWordsChange }: SyllableInputProps) {
 
   return (
     <div className="space-y-2">
-      <label 
-        htmlFor="syllableInput" 
-        className="block text-sm font-medium text-gray-700 dark:text-gray-200"
-      >
-        Hecelere ayrılmış kelimeleri girin (her kelime için yeni satır):
-      </label>
       <Textarea
         id="syllableInput"
         value={input}
         onChange={handleInputChange}
-        placeholder="ke li me&#10;ör nek&#10;he ce"
+        placeholder="Hecelere ayrılmış kelimeleri girin (her kelime için yeni satır):&#10;ke li me&#10;ör nek&#10;he ce"
         className="min-h-[200px] font-mono"
       />
     </div>

@@ -92,3 +92,66 @@ export function printContent(content: HTMLElement | null) {
   // Focus on the new window to ensure the print dialog appears
   printWindow.focus();
 }
+
+export function printContentSentence(content: HTMLElement) {
+  if (!content) {
+    console.error("No content to print.");
+    return;
+  }
+
+  const printWindow = window.open("", "_blank", "width=800,height=600");
+  if (!printWindow) {
+    console.error("Failed to open a new window. Pop-ups might be blocked.");
+    return;
+  }
+
+  const styles = `
+    <style>
+      @media print {
+        @page {
+          size: A4;
+          margin: 1.5cm;
+        }
+        body {
+          font-family: system-ui, -apple-system, sans-serif;
+          margin: 0;
+          padding: 20px;
+          text-align:center;
+          font-size:32px;
+          word-spacing:0.3em;
+        }
+        .text-red-600 { color: #dc2626; }
+        .text-black { color: #000; }
+        .font-comic { font-family: "Comic Sans MS", cursive, sans-serif; }
+        .mr-1 { margin-right: 0.25rem; }
+      }
+    </style>
+  `;
+
+  // Write the content to the new window
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Print</title>
+        ${styles}
+      </head>
+      <body>
+        <div>
+          ${content.outerHTML}
+        </div>
+        <script>
+          window.onload = () => {
+            setTimeout(() => {
+              window.print();
+              window.close();
+            }, 250);
+          };
+        </script>
+      </body>
+    </html>
+  `);
+
+  printWindow.document.close();
+}
+
