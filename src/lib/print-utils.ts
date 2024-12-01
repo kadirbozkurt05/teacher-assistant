@@ -113,7 +113,7 @@ export function printContentSentence(content: HTMLElement) {
           margin: 1.5cm;
         }
         body {
-          font-family: system-ui, -apple-system, sans-serif;
+          font-family: "Comic Sans MS", "Comic Sans", cursive;
           margin: 0;
           padding: 20px;
           text-align:center;
